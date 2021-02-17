@@ -8,12 +8,8 @@ var path = require("path");
 const session_secret = "newton";
 const PORT = process.env.PORT || 9999;
 
-const app = express();
-app.use(express.json()); // added body key to req
-app.use(cors({
-  credentials: true,
-  origin: "https://todoappuisnm.herokuapp.com/"
-}));
+// const cors = require('cors');
+app.use(cors());
 
 
 app.set('trust proxy', 1);
