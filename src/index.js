@@ -14,12 +14,17 @@ app.use(cors({
   credentials: true,
   origin: "https://todoappuisnm.herokuapp.com/"
 }));
+
+app.set('trust proxy', 1);
 app.use(
   session({
     secret: session_secret,
-    cookie: { maxAge: 1 * 60 * 60 * 1000 }
+    cookie: { maxAge: 1 * 60 * 60 * 1000, sameSite:'none',secure:true },
+    resave: true,
+    saveUninitialized:false
   })
 );
+
 app.use(express.static(path.join(__dirname, 'build')));
 
 const db = mongoose.createConnection("mongodb+srv://sonam:snmk15@todoapp.evjv5.mongodb.net/todoapp?retryWrites=true&w=majority", {
