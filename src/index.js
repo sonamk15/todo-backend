@@ -15,6 +15,7 @@ app.use(cors({
   origin: "https://todoappuisnm.herokuapp.com/"
 }));
 
+
 app.set('trust proxy', 1);
 app.use(
   session({
