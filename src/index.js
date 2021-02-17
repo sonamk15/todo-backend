@@ -12,7 +12,7 @@ const app = express()
 // const cors = require('cors');
 app.use(cors({
   credentials: true,
-  origin: "https://todoappuisnm.herokuapp.com/"
+  origin: "https://todoappuisnm.herokuapp.com"
 }));
 
 
