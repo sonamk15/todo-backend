@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/index.js"
+    
   },
-  "author": "sukhdev",
+  "author": "sonam",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.0",

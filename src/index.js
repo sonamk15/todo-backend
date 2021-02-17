@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json()); // added body key to req
 app.use(cors({
   credentials: true,
-  origin: "http://localhost:8080"
+  origin: "https://todoappuisnm.herokuapp.com/"
 }));
 app.use(
   session({
@@ -22,8 +22,7 @@ app.use(
 );
 app.use(express.static(path.join(__dirname, 'build')));
 
-
-const db = mongoose.createConnection("mongodb://localhost:27017/TodoApp", {
+const db = mongoose.createConnection("mongodb+srv://sonam:snmk15@todoapp.evjv5.mongodb.net/todoapp?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
