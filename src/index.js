@@ -10,18 +10,21 @@ const PORT = process.env.PORT || 9999;
 const app = express()
 
 // const cors = require('cors');
-app.use(cors());
+app.use(cors({
+  credentials: true,
+  origin: "https://todoappuisnm.herokuapp.com/"
+}));
 
 
-// app.set('trust proxy', 1);
-// app.use(
-//   session({
-//     secret: session_secret,
-//     cookie: { maxAge: 1 * 60 * 60 * 1000, sameSite:'none',secure:true },
-//     resave: true,
-//     saveUninitialized:false
-//   })
-// );
+app.set('trust proxy', 1);
+app.use(
+  session({
+    secret: session_secret,
+    cookie: { maxAge: 1 * 60 * 60 * 1000, sameSite:'none',secure:true },
+    resave: true,
+    saveUninitialized:false
+  })
+);
 
 app.use(express.static(path.join(__dirname, 'build')));
 
