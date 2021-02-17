@@ -16,15 +16,15 @@ app.use(cors({
 }));
 
 
-app.set('trust proxy', 1);
-app.use(
-  session({
-    secret: session_secret,
-    cookie: { maxAge: 1 * 60 * 60 * 1000, sameSite:'none',secure:true },
-    resave: true,
-    saveUninitialized:false
-  })
-);
+// app.set('trust proxy', 1);
+// app.use(
+//   session({
+//     secret: session_secret,
+//     cookie: { maxAge: 1 * 60 * 60 * 1000, sameSite:'none',secure:true },
+//     resave: true,
+//     saveUninitialized:false
+//   })
+// );
 
 app.use(express.static(path.join(__dirname, 'build')));
 
@@ -49,6 +49,7 @@ const isNullOrUndefined = (val) => val === null || val === undefined || val === 
 const SALT = 5;
 app.get('/', (req,res) =>{
   res.send('application is running on port: '+PORT);
+
 })
 app.post("/signup", async (req, res) => {
   const { userName, password } = req.body;
